@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Departments</title>
+</head>
+<body>
+    {% for dept in data %}
+
+        <h2>Отдел {{forloop.counter}}: {{dept}}</h2>
+        {% for worker in dept.worker_set.all %}
+            {{forloop.counter}}. {{worker.name}} - salary: {{worker.salary}}</h4>
+            <br>
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>
