@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1><b>Данные о моей семье</b></h1>
+
+    {% for i in data %}
+
+        <h2>Сотрудник {{ forloop.counter }}<h2>
+        Имя: {{i.name}}, Емайл: {{i.email}}, Зарплата
+
+        {% if i.salary >= 50000 %}
+            <b style="color: green">{{i.salary}}</b>
+        {% else %}
+            <b style="color: red">{{i.salary}}</b>
+        {% endif %}
+        <br>
+        Отдел: {{ i.department.title }}
+
+    {% endfor %}
+</body>
+</html>
